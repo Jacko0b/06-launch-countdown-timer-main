@@ -1,0 +1,77 @@
+:root{
+    --c-primary-blue: hsl(237, 18%, 59%);
+    --c-primary-red: hsl(345, 95%, 68%);
+
+    --c-neutral-white:hsl(0, 0%, 100%);
+    --c-neutral-desaturated-blue:hsl(236, 21%, 26%);
+    --c-neutral-dark-blue:hsl(235, 16%, 14%);
+    --c-neutral-very-dark-blue:hsl(234, 17%, 12%);
+    --c-background-gradient-bright: hsl(273, 23%, 18%);
+    --ff-primary: 'Red Hat Text', sans-serif;
+
+    --fw-700: 700;
+
+    --fs-default: 0.875rem;
+
+}
+
+*,
+*::before,
+*::after{
+  font-family: var(--ff-primary);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} 
+
+body{
+    height:100vh;
+    background-image:
+    url(./images/pattern-hills.svg),
+    url(./images/bg-stars.svg),
+    linear-gradient( var(--c-neutral-very-dark-blue), var(--c-background-gradient-bright));
+    background-repeat:  repeat-x, repeat-x;
+    background-position:  bottom right 15%,bottom right ;
+    background-size:  auto 30vh,auto,auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+    row-gap: 3rem;
+}
+@media screen and (min-width: 54rem){
+    body{
+        background-position:  bottom,bottom right ;
+    }
+    
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom:  35vh ;
+    height: 100%;
+}
+
+h1{
+    color: var(--c-neutral-white);
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: .3rem;
+    padding: 0 1rem;
+}
+p{
+    color: var(--c-primary-blue);
+    opacity: 50%;
+    text-transform: uppercase;
+    letter-spacing: .15rem;
+    font-size: .7rem;
+}
+
+footer{
+    display: flex;
+    gap: 2rem;
+}
