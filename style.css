@@ -3,6 +3,7 @@
     --c-primary-red: hsl(345, 95%, 68%);
 
     --c-neutral-white:hsl(0, 0%, 100%);
+    --c-neutral-transparent:hsla(0, 0%, 100%, 0);
     --c-neutral-desaturated-blue:hsl(236, 21%, 26%);
     --c-neutral-dark-blue:hsl(235, 16%, 14%);
     --c-neutral-very-dark-blue:hsl(234, 17%, 12%);
@@ -71,6 +72,31 @@ p{
     font-size: .7rem;
 }
 
+footer .icon{
+    width: 2rem;
+    height: auto;
+    aspect-ratio: 1;
+    background-size: 2rem;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: var(--c-background-gradient-bright);
+}
+footer .icon:hover{
+    fill: var(--c-primary-red);
+    cursor: pointer;
+}
+.facebook {
+    width: 2rem;
+    background-image: url(./images/icon-facebook.svg);   
+}
+.pinterest {
+    width: 2rem;
+    background-image: url(./images/icon-pinterest.svg);   
+}
+.instagram {
+    width: 2rem;
+    background-image: url(./images/icon-instagram.svg);   
+}
 footer{
     display: flex;
     gap: 2rem;
