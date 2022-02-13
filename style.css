@@ -72,30 +72,12 @@ p{
     font-size: .7rem;
 }
 
-.icon{
-    width: 2rem;
-    height: auto;
-    aspect-ratio: 1;
-    background-size: 2rem;
-    background-repeat: no-repeat;
-    border: none;
-    background-color: var(--c-background-gradient-bright);
+
+.icon :hover path{ 
+    fill: var(--c-primary-red);
 }
-.icon:hover{
-    cursor: pointer;
-}
-.facebook {
-    width: 2rem;
-    background-image: url(./images/icon-facebook.svg);   
-}
-.pinterest {
-    width: 2rem;
-    background-image: url(./images/icon-pinterest.svg);   
-}
-.instagram {
-    width: 2rem;
-    background-image: url(./images/icon-instagram.svg);   
-}
+
+
 footer{
     display: flex;
     gap: 2rem;
