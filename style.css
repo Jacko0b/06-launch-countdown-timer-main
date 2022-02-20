@@ -84,35 +84,13 @@ footer{
 }
 
 @keyframes top-to-mid{
-    0% {
-      transform: rotateX(0deg);
-      z-index: 2;
-    }
-    0%, 99% {
-      opacity: 0.99;
-    }
-    100% {
-      transform: rotateX(-90deg);
-      opacity: 0;
-    }
+
   }
 @keyframes mid-to-bot{
-    0%, 50% {
-      z-index: -1;
-      transform: rotateX(90deg);
-      opacity: 0;
-    }
-    51% {
-      opacity: 0.99;
-    }
-    100% {
-      opacity: 0.99;
-      transform: rotateX(0deg);
-      z-index: 5;
-    }
+
   }
 .animate{
-    animation: mid-to-bot 0.3s cubic-bezier(.37,.01,.94,.35);
+    animation: mid-to-bot 0.3s;
 }
 
 .card{
@@ -129,16 +107,17 @@ footer{
     border: 1px solid black;
     
 }
-.next{
-    position: absolute;
-
-}
 .card p{
-    position: relative;
-    top: 40%;
-    text-align: center;
-    color: white;
-    font-size: 2rem;
-    opacity: 1;
+  position: relative;
+  top: 40%;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  opacity: 1;
 }
-
+.next{
+}
+.current-back{
+}
+.current-top{
+}
