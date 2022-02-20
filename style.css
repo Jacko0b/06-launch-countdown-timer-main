@@ -14,12 +14,16 @@
 
     --fs-default: 0.875rem;
 
+    --digit-width-mobile: 70px;
+
 }
 
 *,
 *::before,
 *::after{
   font-family: var(--ff-primary);
+  font-weight: var(--fw-700);
+  font-size: var(--fs-default);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -27,6 +31,8 @@
 
 body{
     height:100vh;
+    width: 100vw;
+
     background-image:
     url(./images/pattern-hills.svg),
     url(./images/bg-stars.svg),
@@ -38,9 +44,10 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    text-align: center;
+    justify-content: center;
     row-gap: 3rem;
+
+    
 }
 @media screen and (min-width: 54rem){
     body{
@@ -48,76 +55,149 @@ body{
     }
     
 }
-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-bottom:  35vh ;
-    height: 100%;
-}
 
 h1{
+    width:80%;
     color: var(--c-neutral-white);
     text-transform: uppercase;
+    text-align: center;
     font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: .35rem;
-    padding: 0 1rem;
 }
-p{
+
+.clock-container{
+    width: 330px;
+    height: var(--digit-width-mobile);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.clock-container *{
+    user-select: none;
+    cursor: default;
+}
+.clock-digit{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: var(--digit-width-mobile);
+    height: 100%;
+    gap: 3rem;
+
+    background-color: #161825;
+
+    perspective: 1000px;
+}
+.clock-digit::after{
     color: var(--c-primary-blue);
     opacity: 50%;
+    text-align: center;
     text-transform: uppercase;
     letter-spacing: .15rem;
     font-size: .7rem;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+}
+.clock-digit-days::after{
+    content: "Days";
+}
+.clock-digit-hours::after{
+    content: "Hours";
+}
+.clock-digit-minutes::after{
+    content: "Minutes";
+}
+.clock-digit-seconds::after{
+    content: "Seconds";
+}
+.flip-card{
+    position: relative; 
+    z-index: 1;
+
+    width: 100%;
+    height: calc(var(--digit-width-mobile)/2);
+
+    transform-style: preserve-3d;
+    transform-origin: bottom;
+    transform: rotateX(0);
+
+    transition: transform .7s ease-in-out;
+}
+.flip-card.flipped{
+    transform: rotateX(-180deg);
+}
+.clock-digit-piece{
+    position: absolute;
+    height: calc(var(--digit-width-mobile)/2);
+    width: var(--digit-width-mobile);
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 0;
+
+    overflow: hidden;
+
+    backface-visibility: hidden;
+
 }
 
 
-.icon :hover path{ 
-    fill: var(--c-primary-red);
+
+.next-top,
+.current-top{
+    background-image:
+    radial-gradient(circle 3px at 0 100%, #161825 3px,  #2C2C44 3px),
+    radial-gradient(circle 3px at 0 0 , red 3px,  #2C2C44 3px);
+    background-color: #2C2C44;
+    color: #D3506F;
 }
+
+.next-bot,
+.current-bot{
+    background-image:radial-gradient(circle 3px at 0 0, #161825 15px,  #34364F 15px);
+    background-color: #34364F;
+    color: #FC5D85;
+}
+
+.next-bot,
+.current-top{
+    height: 100%;
+}
+
+.next-top{
+    top:0;
+    align-items: flex-end;
+}
+
+.next-bot{
+    align-items: flex-start;
+    transform: rotateX(-180deg);
+    
+}
+.current-top{
+
+    align-items: flex-end;
+
+    
+}
+.current-bot{
+    bottom: 0;
+    align-items: flex-start;
+}
+
+
 
 
 footer{
     display: flex;
     gap: 2rem;
 }
-
-@keyframes top-to-mid{
-
-  }
-@keyframes mid-to-bot{
-
-  }
-.animate{
-    animation: mid-to-bot 0.3s;
-}
-
-.card{
-    display: flex;
-    position: relative;
-    color: var(--c-neutral-white);
-    background-color: var(--c-primary-red);
-    width: 2em;
-    height: 2em;
-    font-size: 2em;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    border: 1px solid black;
-    
-}
-.card p{
-  position: relative;
-  top: 40%;
-  text-align: center;
-  color: white;
-  font-size: 2rem;
-  opacity: 1;
-}
-.next{
-}
-.current-back{
-}
-.current-top{
+.icon :hover path{ 
+    fill: var(--c-primary-red);
 }

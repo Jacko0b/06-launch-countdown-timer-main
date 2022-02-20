@@ -8,16 +8,46 @@
     <link rel="stylesheet" href="animation.css">
 </head>
 <body>
+    
     <main>
-        
         <div class="clock-container">
-            <div class="clock-seconds">
-                <span class="top-front">1</span>
-                <span class="top-back">2</span>
-                <span class="bot-front">1</span>
-                <span class="bot-back">2</span>
 
+            <div class="clock-digit clock-digit-days"> 
+                <span class="clock-digit-piece next-top">2</span>
+                <span class="clock-digit-piece current-bot">1</span>
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <span class="clock-digit-piece current-top">1</span>
+                    <span class="clock-digit-piece next-bot">2</span>
+                 </div>
             </div>
+
+            <div class="clock-digit clock-digit-hours"> 
+                <span class="clock-digit-piece next-top">2</span>
+                <span class="clock-digit-piece current-bot">1</span>
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <span class="clock-digit-piece current-top">1</span>
+                    <span class="clock-digit-piece next-bot">2</span>
+                 </div>
+            </div>
+
+            <div class="clock-digit clock-digit-minutes"> 
+                <span class="clock-digit-piece next-top">2</span>
+                <span class="clock-digit-piece current-bot">1</span>
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <span class="clock-digit-piece current-top">1</span>
+                    <span class="clock-digit-piece next-bot">2</span>
+                 </div>
+            </div>
+
+            <div class="clock-digit clock-digit-seconds"> 
+                <span class="clock-digit-piece next-top">2</span>
+                <span class="clock-digit-piece current-bot">1</span>
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <span class="clock-digit-piece current-top">1</span>
+                    <span class="clock-digit-piece next-bot">2</span>
+                 </div>
+            </div>
+
         </div>
 
     </main>

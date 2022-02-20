@@ -1,36 +1,99 @@
-*,
-*::after,
-*::before{
+*{
     margin: 0;
     box-sizing: border-box;
 }
+
 body{
-    height: 100vh;
+    background-color: teal;
+    color: black;
+    font-size: 3em;
+    font-weight: 600;
+    line-height: 0;
 }
 main{
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    background-color: teal;
     justify-content: center;
     align-items: center;
 }
 
 .clock-container{
+    width: 66%;
+    height: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    font-size: 50px;
-    line-height: 0;
+}
+.clock-container *{
+    user-select: none;
 
+    cursor: default;
 }
-.clock-seconds{
-    display: flex;
+.clock-digit{
+    border: 1px solid red;
     position: relative;
-    align-items: center;
+    width: 10%;
+    height: 100%;
+    min-height: 70px;
+    min-width: 70px;
+    display: flex;
+
+
+    perspective: 1000px;
 }
-.clock-seconds *{
+.flip-card{
+    position: relative; 
+    z-index: 1;
+
+    width: 100%;
+    height: 50%;
+
+    transform-style: preserve-3d;
+    transform-origin: bottom;
+    transform: rotateX(0);
+
+    transition: transform .7s ease-in-out;
+}
+.flip-card.flipped{
+    transform: rotateX(-180deg);
+}
+.clock-digit-piece{
     position: absolute;
-    
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+
+    backface-visibility: hidden;
+}
+
+.current-bot{
+    bottom: 0;
+    align-items: flex-start;
+}
+.next-top{
+    top:0;
+    align-items: flex-end;
+}
+
+.next-bot,
+.current-top{
+    height: 100%;
+}
+.next-bot{
+    align-items: flex-start;
+    transform: rotateX(-180deg);
+    background-color: blue;
+    color: white;
+}
+.current-top{
+
+    align-items: flex-end;
+
+    background-color: red;
+    color: white;
 }

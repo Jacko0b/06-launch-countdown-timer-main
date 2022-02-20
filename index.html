@@ -27,30 +27,49 @@
 </head>
 
 <body>
-    <div class="test">
-      <!-- <div class="card next"><p>20</p> </div> -->
-      <div class="card current-back">19</div>
-      <div class="card current-top">19</div>
-    </div> 
 
     <h1 class="title">We're launching soon</h1>
 
-    
+    <div class="clock-container">
 
-    <div class="timer">
-      <div id="days">
-        <div>
-          
-        </div>
-        <p>Days</p>
+      <div class="clock-digit clock-digit-days"> 
+          <span class="clock-digit-piece next-top">2</span>
+          <span class="clock-digit-piece current-bot">1</span>
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+              <span class="clock-digit-piece current-top">1</span>
+              <span class="clock-digit-piece next-bot">2</span>
+           </div>
+           <!-- <div class="digit-name"><p>Days</p></div> -->
       </div>
-      <p>Hours</p>
-      <p>Minutes</p>
-      <p>Seconds</p>
 
+      <div class="clock-digit clock-digit-hours"> 
+          <span class="clock-digit-piece next-top">2</span>
+          <span class="clock-digit-piece current-bot">1</span>
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+              <span class="clock-digit-piece current-top">1</span>
+              <span class="clock-digit-piece next-bot">2</span>
+           </div>
+      </div>
 
-    </div>
+      <div class="clock-digit clock-digit-minutes"> 
+          <span class="clock-digit-piece next-top">2</span>
+          <span class="clock-digit-piece current-bot">1</span>
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+              <span class="clock-digit-piece current-top">1</span>
+              <span class="clock-digit-piece next-bot">2</span>
+           </div>
+      </div>
 
+      <div class="clock-digit clock-digit-seconds"> 
+          <span class="clock-digit-piece next-top">2</span>
+          <span class="clock-digit-piece current-bot">1</span>
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+              <span class="clock-digit-piece current-top">1</span>
+              <span class="clock-digit-piece next-bot">2</span>
+           </div>
+      </div>
+
+  </div>
   </main>
   <footer>
     <div class="wraper"><a href="https://www.facebook.com/" class="icon" > <svg id="facebook"  xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="#8385A9" d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg></a></div>
