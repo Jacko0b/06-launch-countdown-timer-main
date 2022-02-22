@@ -10,27 +10,63 @@ let test= new Date("1-1-1");
 (function (){
     const clockDigits = document.querySelectorAll(".clock-digit")
     const launchDate = new Date("2022-11-07");
-
+    const flipCards = document.querySelectorAll(".flip-card");
     (function updateClock(){
-    const currentDate = new Date();
-    const msLeft = Date.parse(launchDate)-Date.parse(currentDate);
-    let timeLeft = {
-        ms: msLeft,
-        s: Math.round(msLeft/1000 %60),
-        m: Math.round(msLeft/1000 /60 %60),
-        h: Math.round(msLeft/1000 /60 /60 %60),
-        d: Math.round(msLeft/1000 /60 /60 /24 ),
-    };
+        const currentDate = new Date();
+        const msLeft = Date.parse(launchDate)-Date.parse(currentDate);
+        let timeLeft = {
+            ms: msLeft,
+            second: Math.round(msLeft/1000 %60),
+            minute: Math.round(msLeft/1000 /60 %60),
+            hour: Math.round(msLeft/1000 /60 /60 %24),
+            day: Math.round(msLeft/1000 /60 /60 /24 ),
+        };
     
     
-    ( function updateAnimation() {
-        clockDigits.forEach(digit => {
-            let flipCard = digit.querySelector(".flip-card")
-            flipCard.classList.toggle("flipped")
-        });
-    })();
+        ( function updateAnimation() {
+            flipCards.forEach(card => {
+                card.classList.toggle("flipped");
+
+                
+            });
+        })();
+        function number(unit){
+            switch (unit){
+                case "second":
+                    return timeLeft.second;
+            
+                case "minute":
+                    return timeLeft.minute;
     
-    console.log();
-    setTimeout(updateClock,1000);
+                case "hour":
+                    return timeLeft.hour;
+    
+                case "day":
+                    return timeLeft.day;
+                default:
+                    break;        
+            }
+        }
+        function updateTime (unit){
+            clockDigits.forEach(digit => {
+                if(digit.classList.contains(`clock-digit-${unit}`)){
+                    const clockDigitPiece = digit.querySelectorAll(".clock-digit-piece")
+                    clockDigitPiece.forEach(element => {
+                        if(element.classList.contains("next-top") || element.classList.contains("next-bot")){
+                            element.innerHTML = number(unit);
+                        }
+                        else element.innerHTML = number(unit);
+                    });
+
+                   
+                }
+            });
+        };
+        updateTime('second');
+        updateTime('minute');
+        updateTime('hour');
+        updateTime('day');
+        setTimeout(updateClock,1000);
+        
     })();
 })();

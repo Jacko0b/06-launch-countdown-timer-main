@@ -103,16 +103,16 @@ h1{
 
 
 }
-.clock-digit-days::after{
+.clock-digit-day::after{
     content: "Days";
 }
-.clock-digit-hours::after{
+.clock-digit-hour::after{
     content: "Hours";
 }
-.clock-digit-minutes::after{
+.clock-digit-minute::after{
     content: "Minutes";
 }
-.clock-digit-seconds::after{
+.clock-digit-second::after{
     content: "Seconds";
 }
 .flip-card{
@@ -126,7 +126,7 @@ h1{
     transform-origin: bottom;
     transform: rotateX(0);
 
-    transition: transform .7s ease-in-out;
+    transition: transform .2s ease-in-out;
 }
 .flip-card.flipped{
     transform: rotateX(-180deg);
@@ -258,5 +258,8 @@ footer{
         background-image:radial-gradient(circle 6px at 0 0, #161825 6px,  #34364f00 6px),
         radial-gradient(circle 6px at 100% 0, #161825 6px,  #34364f00 6px);
 
+    }
+    .hidden{
+        opacity: 0;
     }
 }
