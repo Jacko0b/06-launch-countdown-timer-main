@@ -23,13 +23,14 @@ let test= new Date("1-1-1");
         };
     
     
-        ( function updateAnimation() {
-            flipCards.forEach(card => {
-                card.classList.toggle("flipped");
+        // ( function updateAnimation() {
+        //     flipCards.forEach(card => {
+        //         card.classList.toggle("flipped");
 
                 
-            });
-        })();
+        //     });
+            
+        // })();
         function number(unit){
             switch (unit){
                 case "second":
@@ -50,12 +51,23 @@ let test= new Date("1-1-1");
         function updateTime (unit){
             clockDigits.forEach(digit => {
                 if(digit.classList.contains(`clock-digit-${unit}`)){
-                    const clockDigitPiece = digit.querySelectorAll(".clock-digit-piece")
-                    clockDigitPiece.forEach(element => {
+                    const clockDigitPieces = digit.querySelectorAll(".clock-digit-piece")
+                    const flipCard = digit.querySelector(".flip-card")
+                    clockDigitPieces.forEach(element => {
                         if(element.classList.contains("next-top") || element.classList.contains("next-bot")){
-                            element.innerHTML = number(unit);
+                            if(element.innerHTML !== ((number(unit)+1)+"")){
+                                element.innerHTML = number(unit)+1;
+                                flipCard.classList.add("flipped");
+                            }
+                            
                         }
-                        else element.innerHTML = number(unit);
+                        else  if(element.classList.contains("current-top") || element.classList.contains("current-bot")){
+                            if(element.innerHTML !== (number(unit)+"")){
+                                element.innerHTML = number(unit);
+                            }
+                            
+                        }
+                        
                     });
 
                    
