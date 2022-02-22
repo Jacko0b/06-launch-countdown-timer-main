@@ -126,9 +126,9 @@ h1{
     transform-origin: bottom;
     transform: rotateX(0);
 
-    transition: transform .4s ease-in-out;
+    transition: transform .7s ease-in-out;
 }
-.flip-card.flipped{
+.flip-card .flipped{
     transform: rotateX(-180deg);
 }
 .clock-digit-piece{
@@ -260,6 +260,6 @@ footer{
 
     }
     .hidden{
-        opacity: 0;
+        display: none;
     }
 }

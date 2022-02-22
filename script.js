@@ -51,8 +51,8 @@ let test= new Date("1-1-1");
         function updateTime (unit){
             clockDigits.forEach(digit => {
                 if(digit.classList.contains(`clock-digit-${unit}`)){
-                    const clockDigitPieces = digit.querySelectorAll(".clock-digit-piece")
-                    const flipCard = digit.querySelector(".flip-card")
+                    const clockDigitPieces = digit.querySelectorAll(".clock-digit-piece");
+                    const flipCard = digit.querySelector(".flip-card");
                     clockDigitPieces.forEach(element => {
                         if(element.classList.contains("next-top") || element.classList.contains("next-bot")){
                             if(element.innerHTML !== ((number(unit)+1)+"")){
@@ -65,9 +65,14 @@ let test= new Date("1-1-1");
                             if(element.innerHTML !== (number(unit)+"")){
                                 element.innerHTML = number(unit);
                             }
-                            
                         }
-                        
+                        const flipCardCopy = flipCard.cloneNode(true);
+                        flipCardCopy.classList.remove("flipped")
+                        digit.replaceChild(flipCardCopy, flipCard)
+
+                        //zamiana flip card z flipcopy z usunietym flipped
+
+                    // flipCard.classList.add("hidden");  
                     });
 
                    
