@@ -1,12 +1,4 @@
 
-let test= new Date("1-1-1");
-// console.log(test)
-// test.setSeconds(10);
-// test.setMinutes(29);
-// test.setHours(5);
-// test.setDate(20);
-// console.log(test);
-
 (function (){
     const clockDigits = document.querySelectorAll(".clock-digit")
     const launchDate = new Date("2022-12-23");
