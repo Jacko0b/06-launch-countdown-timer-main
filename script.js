@@ -9,7 +9,7 @@ let test= new Date("1-1-1");
 
 (function (){
     const clockDigits = document.querySelectorAll(".clock-digit")
-    const launchDate = new Date("2022-11-07");
+    const launchDate = new Date("2022-12-23");
     const flipCards = document.querySelectorAll(".flip-card");
     (function updateClock(){
         const currentDate = new Date();
@@ -23,14 +23,6 @@ let test= new Date("1-1-1");
         };
     
     
-        // ( function updateAnimation() {
-        //     flipCards.forEach(card => {
-        //         card.classList.toggle("flipped");
-
-                
-        //     });
-            
-        // })();
         function number(unit){
             switch (unit){
                 case "second":
@@ -52,30 +44,18 @@ let test= new Date("1-1-1");
             clockDigits.forEach(digit => {
                 if(digit.classList.contains(`clock-digit-${unit}`)){
                     const clockDigitPieces = digit.querySelectorAll(".clock-digit-piece");
-                    const flipCard = digit.querySelector(".flip-card");
                     clockDigitPieces.forEach(element => {
                         if(element.classList.contains("next-top") || element.classList.contains("next-bot")){
                             if(element.innerHTML !== ((number(unit)+1)+"")){
                                 element.innerHTML = number(unit)+1;
-                                flipCard.classList.add("flipped");
                             }
-                            
                         }
                         else  if(element.classList.contains("current-top") || element.classList.contains("current-bot")){
                             if(element.innerHTML !== (number(unit)+"")){
                                 element.innerHTML = number(unit);
                             }
                         }
-                        const flipCardCopy = flipCard.cloneNode(true);
-                        flipCardCopy.classList.remove("flipped")
-                        digit.replaceChild(flipCardCopy, flipCard)
-
-                        //zamiana flip card z flipcopy z usunietym flipped
-
-                    // flipCard.classList.add("hidden");  
                     });
-
-                   
                 }
             });
         };
