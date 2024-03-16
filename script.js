@@ -1,7 +1,7 @@
 
 (function (){
     const clockDigits = document.querySelectorAll(".clock-digit")
-    const launchDate = new Date("2022-12-23");
+    const launchDate = new Date("2024-05-11");
     (function updateClock(){
         const currentDate = new Date();
         const msLeft = Date.parse(launchDate)-Date.parse(currentDate);
