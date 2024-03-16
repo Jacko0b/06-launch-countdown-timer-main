@@ -59,6 +59,8 @@ main{
     gap: 3rem;
 }
 h1{
+    position: relative;
+    top: 30px;
     width:80%;
     color: var(--c-neutral-white);
     text-transform: uppercase;
